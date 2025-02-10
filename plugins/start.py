@@ -17,7 +17,7 @@ from database.database import add_user, del_user, full_userbase, present_user
 
 """add time im seconds for waitingwaiting before delete 
 1min=60, 2min=60×2=120, 5min=60×5=300"""
-SECONDS = int(os.getenv("SECONDS", "60"))
+SECONDS = int(os.getenv("SECONDS", "300"))
 
 @Bot.on_message(filters.command('start') & filters.private & subscribed)
 async def start_command(client: Client, message: Message):
@@ -88,13 +88,13 @@ async def start_command(client: Client, message: Message):
             except:
                 pass
 
-        k = await message.reply_text("<b>👆ᴛʜɪs ᴡɪʟʟ ʙᴇ ᴅᴇʟᴇᴛᴇᴅ ɪɴ 5 ᴍɪɴᴜᴛᴇs\n❗️ғᴏʀᴡᴀʀᴅ ɪᴛ ᴛᴏ ʏᴏᴜʀ sᴀᴠᴇᴅ ᴍᴇssᴀɢᴇs ʙᴇғᴏʀᴇ ᴅᴏᴡɴʟᴏᴀᴅɪɴɢ.</b>")
+        k = await message.reply_text("<b>𝖳𝗁𝗂𝗌 𝗏𝗂𝖽𝖾𝗈 𝗂𝗌 𝖽𝖾𝗅𝖾𝗍𝖾𝖽 𝖺𝗎𝗍𝗈𝗆𝖺𝗍𝗂𝖼𝖺𝗅𝗅𝗒 𝗂𝗇 5𝗆𝗂𝗇..\n 𝖥𝗈𝗋𝗐𝖺𝗋𝖽 𝗂𝗇 𝗒𝗈𝗎𝗋 𝖲𝖺𝗏𝖾𝖽 𝖬𝖾𝗌𝗌𝖺𝗀𝖾𝗌..!!</b>")
         await asyncio.sleep(SECONDS)
 
         for data in Codeflix:
             try:
                 await data.delete()
-                await k.edit_text("<b>ʏᴏᴜʀ ᴠɪᴅᴇᴏ / ғɪʟᴇ ɪs ᴅᴇʟᴇᴛᴇᴅ sᴜᴄᴄᴇssғᴜʟʟʏ.</b>")
+                await k.edit_text("<b>𝖸𝗈𝗎𝗋 𝗏𝗂𝖽𝖾𝗈 𝗂𝗌 𝖽𝖾𝗅𝖾𝗍𝖾𝖽 𝗌𝗎𝖼𝖼𝖾𝗌𝗌𝖿𝗎𝗅𝗅𝗒.</b>")
             except:
                 pass
 
@@ -103,8 +103,8 @@ async def start_command(client: Client, message: Message):
         reply_markup = InlineKeyboardMarkup(
             [
                 [
-                    InlineKeyboardButton('ᴍᴏᴠɪᴇ', url='https://t.me/+YExNUN4Vp81kNGQ1'),
-                    InlineKeyboardButton('sᴜᴘᴘᴏʀᴛ', url='https://t.me/+-o9isg1zi01kOTk1')
+                    InlineKeyboardButton("ᴀʙᴏᴜᴛ", callback_data = "about"),
+                    InlineKeyboardButton("ᴄʟᴏsᴇ", callback_data = "close")
                 ]
             ]
         )
