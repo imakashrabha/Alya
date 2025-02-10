@@ -88,17 +88,36 @@ async def start_command(client: Client, message: Message):
             except:
                 pass
 
-        k = await message.reply_text("<b>𝖳𝗁𝗂𝗌 𝗏𝗂𝖽𝖾𝗈 𝗂𝗌 𝖽𝖾𝗅𝖾𝗍𝖾𝖽 𝖺𝗎𝗍𝗈𝗆𝖺𝗍𝗂𝖼𝖺𝗅𝗅𝗒 𝗂𝗇 5𝗆𝗂𝗇..\n 𝖥𝗈𝗋𝗐𝖺𝗋𝖽 𝗂𝗇 𝗒𝗈𝗎𝗋 𝖲𝖺𝗏𝖾𝖽 𝖬𝖾𝗌𝗌𝖺𝗀𝖾𝗌..!!</b>")
-        await asyncio.sleep(SECONDS)
+                if FILE_AUTO_DELETE > 0:
+            notification_msg = await message.reply(
+                f"<b>This file will be deleted in {get_exp_time(FILE_AUTO_DELETE)}. Please save or forward it to your saved messages before it gets deleted.</b>"
+            )
 
-        for data in Codeflix:
+            await asyncio.sleep(FILE_AUTO_DELETE)
+
+            for snt_msg in codeflix_msgs:    
+                if snt_msg:
+                    try:    
+                        await snt_msg.delete()  
+                    except Exception as e:
+                        print(f"Error deleting message {snt_msg.id}: {e}")
+
             try:
-                await data.delete()
-                await k.edit_text(<b>ʏᴏᴜʀ ᴠɪᴅᴇᴏ ɪs ᴅᴇʟᴇᴛᴇᴅ. Iғ ʏᴏᴜ ᴡᴀɴᴛ ᴛᴏ ɢᴇᴛ ᴛʜᴇ ғɪʟᴇs ᴀɢᴀɪɴ, ᴛʜᴇɴ ᴄʟɪᴄᴋ • <a href='https://t.me/{client.username}?start={message.command[1]}'>ɢᴇᴛ ғɪʟᴇs</a></b>")
-            except:
-                pass
+                reload_url = (
+                    f"https://t.me/{client.username}?start={message.command[1]}"
+                    if message.command and len(message.command) > 1
+                    else None
+                )
+                keyboard = InlineKeyboardMarkup(
+                    [[InlineKeyboardButton("Get File Again!", url=reload_url)]]
+                ) if reload_url else None
 
-        return
+                await notification_msg.edit(
+                    "<b>ʏᴏᴜʀ ᴠɪᴅᴇᴏ / ꜰɪʟᴇ ɪꜱ ꜱᴜᴄᴄᴇꜱꜱꜰᴜʟʟʏ ᴅᴇʟᴇᴛᴇᴅ !!\n\nᴄʟɪᴄᴋ ʙᴇʟᴏᴡ ʙᴜᴛᴛᴏɴ ᴛᴏ ɢᴇᴛ ʏᴏᴜʀ ᴅᴇʟᴇᴛᴇᴅ ᴠɪᴅᴇᴏ / ꜰɪʟᴇ 👇</b>",
+                    reply_markup=keyboard
+                )
+            except Exception as e:
+                print(f"Error updating notification with 'Get File Again' button: {e}")
     else:
         reply_markup = InlineKeyboardMarkup(
             [
