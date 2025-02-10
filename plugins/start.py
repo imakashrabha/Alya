@@ -94,7 +94,7 @@ async def start_command(client: Client, message: Message):
         for data in Codeflix:
             try:
                 await data.delete()
-                await k.edit_text(<b>ʏᴏᴜʀ ᴠɪᴅᴇᴏ ɪs ᴅᴇʟᴇᴛᴇᴅ. Iғ ʏᴏᴜ ᴡᴀɴᴛ ᴛᴏ ɢᴇᴛ ᴛʜᴇ ғɪʟᴇs ᴀɢᴀɪɴ, ᴛʜᴇɴ ᴄʟɪᴄᴋ • <a href='https://t.me/{client.username}?start={message.command[1]}'>ɢᴇᴛ ғɪʟᴇs</a></b>")
+                await k.edit_text(f"<b>ʏᴏᴜʀ ᴠɪᴅᴇᴏ ɪs ᴅᴇʟᴇᴛᴇᴅ. Iғ ʏᴏᴜ ᴡᴀɴᴛ ᴛᴏ ɢᴇᴛ ᴛʜᴇ ғɪʟᴇs ᴀɢᴀɪɴ, ᴛʜᴇɴ ᴄʟɪᴄᴋ \u2022 <a href='https://t.me/{client.username}?start={message.command[1]}'>ɢᴇᴛ ғɪʟᴇs</a></b>")
             except:
                 pass
 
