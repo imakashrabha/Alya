@@ -80,7 +80,7 @@ async def start_command(client: Client, message: Message):
             except Exception:
                 continue
         
-        delete_msg = await message.reply_text("<b>This video will be deleted automatically in 5 minutes. Forward to Saved Messages.</b>")
+        delete_msg = await message.reply_text("<b>𝖳𝗁𝗂𝗌 𝗏𝗂𝖽𝖾𝗈 𝗂𝗌 𝖽𝖾𝗅𝖾𝗍𝖾𝖽 𝖺𝗎𝗍𝗈𝗆𝖺𝗍𝗂𝖼𝖺𝗅𝗅𝗒 𝗂𝗇 5𝗆𝗂𝗇𝗎𝗍𝖾𝗌.. 𝖥𝗈𝗋𝗐𝖺𝗋𝖽 𝗂𝗇 𝗒𝗈𝗎𝗋 𝖲𝖺𝗏𝖾𝖽 𝖬𝖾𝗌𝗌𝖺𝗀𝖾𝗌..!!</b>")
         await asyncio.sleep(SECONDS)
 
         for msg in sent_messages:
@@ -91,8 +91,8 @@ async def start_command(client: Client, message: Message):
         
         try:
             await delete_msg.edit_text(
-                f"<b>Previous video was deleted. Click below to get the file again:</b>\n\n"
-                f"<a href='https://t.me/{client.username}?start={message.command[1]}'>Get File</a>"
+                f"<b>›› 𝖯𝗋𝗂𝗏𝗂𝗈𝗎𝗌 𝗏𝗂𝖽𝖾𝗈 𝗐𝖺𝗌 𝖽𝖾𝗅𝖾𝗍𝖾𝖽. 𝖨𝖿 𝗒𝗈𝗎 𝗐𝖺𝗇𝗍 𝗍𝗁𝖾 𝗌𝖺𝗆𝖾 𝗏𝗂𝖽𝖾𝗈 𝖺𝗀𝖺𝗂𝗇, 𝖼𝗅𝗂𝖼𝗄 𝗈𝗇:</b>\n\n"
+                f"<a href='https://t.me/{client.username}?start={message.command[1]}'>𝖦𝖾𝗍 𝖿𝗂𝗅𝖾</a>"
             )
         except Exception:
             pass
