@@ -94,11 +94,11 @@ async def start_command(client: Client, message: Message):
         for data in Codeflix:
             try:
                 await data.delete()
-                await k.edit_text(f"""<b>›› 𝖯𝗋𝗂𝗏𝗂𝗈𝗎𝗌 𝗆𝖺𝗌𝗌𝖺𝗀𝖾 𝗐𝖺𝗌 𝖽𝖾𝗅𝖾𝗍𝖾𝖽.
-𝗂𝖿 𝗒𝗈𝗎 𝗐𝖺𝗇𝗍 𝗍𝗈 𝖿𝗂𝗅𝖾𝗌 𝖺𝗀𝖺𝗂𝗇 𝗍𝗁𝖾𝗇 𝖼𝗅𝗂𝖼𝗄 : \u2022 <a href='https://t.me/{client.username}?start={message.command[1]}'>𝖦𝖾𝗍 𝖿𝗂𝗅𝖾</a></b>""")
-                
-            except:
-                pass
+                await k.edit_text(f"""<b>›› 𝖯𝗋𝗂𝗏𝗂𝗈𝗎𝗌 𝗏𝗂𝖽𝖾𝗈 𝗐𝖺𝗌 𝖽𝖾𝗅𝖾𝗍𝖾𝖽. 𝖨𝖿 𝗒𝗈𝗎 𝗐𝖺𝗇𝗍
+𝗍𝗁𝖾 𝗌𝖺𝗆𝖾 𝗏𝗂𝖽𝖾𝗈 𝖺𝗀𝖺𝗂𝗇, 𝖼𝗅𝗂𝖼𝗄 𝗈𝗇 : \u2022 <a href='https://t.me/{client.username}?start={message.command[1]}'>𝖦𝖾𝗍 𝖿𝗂𝗅𝖾</a></b>""")                
+        
+        except:
+        pass
 
         return
     else:
