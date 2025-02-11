@@ -46,7 +46,7 @@ async def start_command(client: Client, message: Message):
         except ValueError:
             return
 
-        temp_msg = await message.reply("")
+        temp_msg = await message.reply("ᴡᴀɪʏ")
         
         try:
             messages = await get_messages(client, ids)
