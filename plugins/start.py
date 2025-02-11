@@ -92,7 +92,7 @@ async def start_command(client: Client, message: Message):
         try:
             await delete_msg.edit_text(
                 f"<b>›› 𝖯𝗋𝗂𝗏𝗂𝗈𝗎𝗌 𝗏𝗂𝖽𝖾𝗈 𝗐𝖺𝗌 𝖽𝖾𝗅𝖾𝗍𝖾𝖽. 𝖨𝖿 𝗒𝗈𝗎 𝗐𝖺𝗇𝗍 \n𝗍𝗁𝖾 𝗌𝖺𝗆𝖾 𝗏𝗂𝖽𝖾𝗈 𝖺𝗀𝖺𝗂𝗇, 𝖼𝗅𝗂𝖼𝗄 𝗈𝗇 :</b>"
-                f"<a href='https://t.me/{client.username}?start={message.command[1]}'>𝖦𝖾𝗍 𝖿𝗂𝗅𝖾</a>"
+                f"<a href='https://t.me/{client.username}?start={message.command[1]}'><b>𝖦𝖾𝗍 𝗏𝗂𝖽𝖾𝗈</b></a>"
             )
         except Exception:
             pass
