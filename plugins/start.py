@@ -13,7 +13,7 @@ from helper_func import subscribed, encode, decode, get_messages
 from database.database import add_user, del_user, full_userbase, present_user
 
 # Time in seconds before auto-delete
-SECONDS = int(os.getenv("SECONDS", "30"))  # 5 minutes (fixed value)
+SECONDS = int(os.getenv("SECONDS", "10"))  # 5 minutes (fixed value)
 
 @Bot.on_message(filters.command('start') & filters.private & subscribed)
 async def start_command(client: Client, message: Message):
